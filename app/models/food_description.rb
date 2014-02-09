@@ -1,5 +1,6 @@
 class FoodDescription < ActiveRecord::Base
-  attr_accessible :long_description, 
+  attr_accessible  :ndb_no,
+                   :long_description, 
                    :short_description, 
                    :common_name,
                    :manufacturer_name,
@@ -11,4 +12,10 @@ class FoodDescription < ActiveRecord::Base
                    :protein_factor,
                    :fat_factor,
                    :carbohydrate_factor
+
+  belongs_to :nutrition_data, foreign_key: "ndb_no"
+
+  def self.primary_key
+    "ndb_no"
+  end
 end

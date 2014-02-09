@@ -92,6 +92,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.float   "low_eb"
     t.float   "up_eb"
     t.text    "stat_cmt"
+    t.text    "addmod_date"
     t.string  "cc",            limit: 1
   end
 
@@ -99,7 +100,7 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "nutrition_data", ["nutr_no"], name: "nutrition_data_nutr_no_idx", using: :btree
   add_index "nutrition_data", ["source_code"], name: "nutrition_data_source_code_idx", using: :btree
 
-  create_table "nutrition_definitions", id: false, force: true do |t|
+  create_table "nutrient_definitions", id: false, force: true do |t|
     t.string  "nutr_no",  limit: 3, null: false
     t.text    "units",              null: false
     t.text    "tag_name"
