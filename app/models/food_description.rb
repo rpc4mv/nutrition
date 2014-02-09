@@ -13,7 +13,7 @@ class FoodDescription < ActiveRecord::Base
                    :fat_factor,
                    :carbohydrate_factor
 
-  belongs_to :nutrition_data, foreign_key: "ndb_no"
+  has_many :nutrition_data, foreign_key: "ndb_no"
 
   def self.primary_key
     "ndb_no"
