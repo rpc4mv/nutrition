@@ -15,7 +15,10 @@ class FoodDescription < ActiveRecord::Base
 
   has_many :nutrition_data, foreign_key: "ndb_no"
   has_many :weights, foreign_key: "ndb_no"
-  
+  has_many :footnotes, foreign_key: "ndb_no"
+
+  has_one :food_group, foreign_key: "food_group_code"
+
   def self.primary_key
     "ndb_no"
   end

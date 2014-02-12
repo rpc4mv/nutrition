@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 0) do
   enable_extension "plpgsql"
 
   create_table "data_sources", id: false, force: true do |t|
-    t.string  "data_sources_id",  limit: 6, null: false
+    t.string  "data_source_id",  limit: 6, null: false
     t.text    "authors"
     t.text    "title",                 null: false
     t.integer "year"
